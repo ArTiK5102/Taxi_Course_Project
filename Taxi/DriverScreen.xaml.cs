@@ -33,6 +33,7 @@ namespace Taxi
         List<JoinResult> orders;
         Order order = new Order();
         Order order1 = new Order();
+        private DispatcherTimer _timer;
         public DriverScreen(int IdDriver)
         {
             InitializeComponent();
@@ -65,7 +66,10 @@ namespace Taxi
             App.LanguageChanged += LanguageChanged;
 
             CultureInfo currLang = App.Language;
-            if(Convert.ToString(currLang) == "ru-RU")
+
+            InitializeTimer();
+
+            if (Convert.ToString(currLang) == "ru-RU")
             {
                 ButtonHello.Content = "Привет, " + us.DriverName + "\n" + us.Mail;
             }
@@ -83,6 +87,30 @@ namespace Taxi
                 menuLang.Click += ChangeLanguageClick;
                 menuLanguage.Items.Add(menuLang);
             }
+        }
+
+        private void InitializeTimer()
+        {
+            _timer = new DispatcherTimer();
+            _timer.Interval = TimeSpan.FromSeconds(5); // Интервал 5 секунд
+            _timer.Tick += Timer_Tick;
+            _timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            LoadData(); // Загружаем данные каждый раз, когда срабатывает таймер
+        }
+
+        private void LoadData()
+        {
+            db.Orders.Load();
+            orders = (from p in db.Users
+                      join c in db.Orders on p.UserID equals c.UserID
+                      select new JoinResult { Address1 = c.Address1, Address2 = c.Address2, DateOrder = c.DateOrder, DriverID = c.DriverID, Status = c.Status, UserID = c.UserID, Contact = p.Contact, Price = c.Price }).ToList();
+            ordersGrid.ItemsSource = orders.Where(x => x.Status == "Active" && x.DriverID == null).ToList();
+            CurrentOrdersGrid.ItemsSource = orders.Where(x => x.Status == "Confirmed").ToList();
+            ItemOrders2.ItemsSource = orders.Where(x => x.Status == "Done" || x.Status == "Cancel").ToList();
         }
         private void LanguageChanged(Object sender, EventArgs e)
         {
