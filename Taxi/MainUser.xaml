@@ -8,7 +8,7 @@
         xmlns:converters="clr-namespace:Taxi.Models"
         mc:Ignorable="d"
         Title="MainUser" Height="527.114" Width="700" ResizeMode="NoResize" WindowStyle="None"
-        Icon="C:\Users\artem\OneDrive\Рабочий стол\taxi.cours\Taxi\Taxi\Resources\icon.ico">
+        Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Control.Resources>
 
     </Control.Resources>

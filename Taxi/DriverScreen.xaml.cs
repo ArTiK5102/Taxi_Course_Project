@@ -18,6 +18,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Taxi.Models;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace Taxi
 {
