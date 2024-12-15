@@ -9,6 +9,7 @@ using System.Windows;
 
 namespace Taxi
 {
+	//dsadsdasdasdas
     /// <summary>
     /// Логика взаимодействия для App.xaml
     /// </summary>
