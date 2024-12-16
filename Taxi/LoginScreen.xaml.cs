@@ -39,53 +39,41 @@ namespace Taxi
 
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckBox1.IsChecked == true)
+            foreach (Driver driver in db.Drivers.Local)
             {
-                foreach (Driver driver in db.Drivers.Local)
+                //string Password = Encrypt(txtPassword.Password, "1337");
+                string Password = txtPassword.Password;
+                if (driver.Password == Password && driver.Mail == txtUserName.Text)
                 {
-                    //string Password = Encrypt(txtPassword.Password, "1337");
-                    string Password = txtPassword.Password;
-                    if (driver.Password == Password && driver.Mail == txtUserName.Text)
-                    {
-                        int idDriver = driver.DriverID;
-                        DriverScreen driverScreen = new DriverScreen(idDriver);
-                        driverScreen.Show();
-                        this.Close();
-                    }
+                    int idDriver = driver.DriverID;
+                    DriverScreen driverScreen = new DriverScreen(idDriver);
+                    driverScreen.Show();
+                    this.Close();
                 }
             }
-            else if(CheckBox2.IsChecked == true)
+            foreach (Administrator administrator in db.Administrators.Local)
             {
-                foreach (Administrator administrator in db.Administrators.Local)
+                string Password = txtPassword.Password;
+                //testtxt.Text += txtUserName.Text + administrator.Login + " administrator.Password: " + administrator.Password + " Password: " + Password + "\n ";
+                if (administrator.Password == Password && administrator.Login == txtUserName.Text)
                 {
-                    string Password = txtPassword.Password;
-                    //testtxt.Text += txtUserName.Text + administrator.Login + " administrator.Password: " + administrator.Password + " Password: " + Password + "\n ";
-                    if (administrator.Password == Password && administrator.Login == txtUserName.Text )
-                    {
-                     
-                        string Login = administrator.Login;
-                        AdminScreen adminScreen = new AdminScreen(Login);
-                        adminScreen.Show();
-                        this.Close();
-                    }
+
+                    string Login = administrator.Login;
+                    AdminScreen adminScreen = new AdminScreen(Login);
+                    adminScreen.Show();
+                    this.Close();
                 }
             }
-            else if(CheckBox1.IsChecked == true && CheckBox2.IsChecked == true)
+
+            foreach (User user in db.Users.Local)
             {
-                MessageBox.Show("Error, select only one checkbox", "Error");
-            }
-            else
-            {
-                foreach (User user in db.Users.Local)
+                string Password = Encrypt(txtPassword.Password, "1337");
+                if (user.Password == Password && user.Mail == txtUserName.Text)
                 {
-                    string Password = Encrypt(txtPassword.Password, "1337");
-                    if (user.Password == Password && user.Mail == txtUserName.Text)
-                    {
-                            int id = user.UserID;
-                            MainUser mainUser = new MainUser(id);
-                            mainUser.Show();
-                            this.Close();
-                    }
+                    int id = user.UserID;
+                    MainUser mainUser = new MainUser(id);
+                    mainUser.Show();
+                    this.Close();
                 }
             }
         }
