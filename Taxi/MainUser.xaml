@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
         xmlns:converters="clr-namespace:Taxi.Models"
         mc:Ignorable="d"
-        Title="MainUser" Height="527.114" Width="700" ResizeMode="NoResize" WindowStyle="None"
+        Title="MainUser" Height="527.114" Width="900" ResizeMode="NoResize" WindowStyle="None"
         Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Control.Resources>
 

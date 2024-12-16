@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Taxi"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="DriverScreen" Height="481.657" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Title="DriverScreen" Height="481.657" Width="900" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
         Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Grid>
         <Grid.ColumnDefinitions>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Taxi"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Login" Height="392.4" Width="269.717"  MouseDown="Window_MouseDown" Background="#ffd300"  ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
+        Title="Login" Height="392.4" Width="279.717"  MouseDown="Window_MouseDown" Background="#ffd300"  ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen"
         Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Grid  x:Name="GridBottomBar" MouseDown="GridBottomBar_MouseDown">
         <Rectangle Fill="{x:Null}"  Stroke="#FFEAEAEA" Width="18" Height="18" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,2,0"></Rectangle>
