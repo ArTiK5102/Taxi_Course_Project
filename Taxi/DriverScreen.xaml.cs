@@ -1,25 +1,4 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Taxi.Models;
-using System.Threading;
-using System.Windows.Threading;
+﻿using Taxi.Models;
 
 namespace Taxi
 {
@@ -50,15 +29,6 @@ namespace Taxi
             ProfileLastName.Text = us.DriverLastName;
             ProfileNumber.Text = us.Contact.ToString();
             ProfileMail.Text = us.Mail;
-            //MemoryStream strmImg = new MemoryStream(us.Avatar);
-            //BitmapImage myBitmapImage = new BitmapImage();
-            //myBitmapImage.BeginInit();
-            //myBitmapImage.StreamSource = strmImg;
-            //myBitmapImage.DecodePixelWidth = 280;
-            //myBitmapImage.DecodePixelHeight = 265;
-            //myBitmapImage.EndInit();
-            //Avatar.ImageSource = myBitmapImage;
-            //Avatar1.ImageSource = myBitmapImage;
             orders =( from p in db.Users
                      join c in db.Orders on p.UserID equals c.UserID
                      select new JoinResult { Address1 = c.Address1, Address2 = c.Address2, DateOrder = c.DateOrder, DriverID = c.DriverID, Status = c.Status, UserID = c.UserID, Contact = p.Contact, Price = c.Price }).ToList();

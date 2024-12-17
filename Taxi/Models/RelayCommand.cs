@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace Taxi.Models
+﻿namespace Taxi.Models
 {
     class RelayCommand : ICommand
     {
