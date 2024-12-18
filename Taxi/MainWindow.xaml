@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Taxi"
         mc:Ignorable="d"
         Title="MainWindow" Height="250" Width="300"
-        Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
+        Icon="C:\Users\rebik\source\repos\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="20 8 20 8" />
