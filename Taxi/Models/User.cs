@@ -1,4 +1,14 @@
-﻿namespace Taxi.Models
+﻿using Microsoft.Win32;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.UI.MobileControls;
+using System.Windows.Input;
+
+namespace Taxi.Models
 {
     public class User
     {

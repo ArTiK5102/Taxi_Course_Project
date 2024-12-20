@@ -7,7 +7,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="AdminScreen" Height="480" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None"
-        Icon="C:\Users\artem\OneDrive\Рабочий стол\Taxi_Course_Project\Taxi\Resources\icon.ico">
+        Icon="C:\Users\rebik\source\repos\Taxi_Course_Project\Taxi\Resources\icon.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>

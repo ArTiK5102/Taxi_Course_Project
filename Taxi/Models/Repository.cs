@@ -1,4 +1,9 @@
-﻿namespace Taxi.Models
+﻿using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Runtime.Remoting.Contexts;
+
+namespace Taxi.Models
 {
     public class Repository<T> : IRepository<T> where T : class
     {
