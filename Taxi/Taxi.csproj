@@ -75,6 +75,7 @@
     <Compile Include="AdminScreen.xaml.cs">
       <DependentUpon>AdminScreen.xaml</DependentUpon>
     </Compile>
+    <Compile Include=".cs" />
     <Compile Include="DriverScreen.xaml.cs">
       <DependentUpon>DriverScreen.xaml</DependentUpon>
     </Compile>

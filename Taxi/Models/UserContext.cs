@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Taxi.Logging;
 
 namespace Taxi.Models
 {
@@ -11,7 +12,7 @@ namespace Taxi.Models
     {
         public SoccerContext() : base("DefaultConnection")
         {
-
+            this.Database.Log = Logger.Log;
         }
         public DbSet<User> Users { get; set; }
         public DbSet<Order> Orders { get; set; }
