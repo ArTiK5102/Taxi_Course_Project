@@ -48,7 +48,7 @@ namespace Taxi
                 menuLanguage.Items.Add(menuLang);
             }
         }
-        private void LanguageChanged(Object sender, EventArgs e)
+        public void LanguageChanged(Object sender, EventArgs e)
         {
             CultureInfo currLang = App.Language;
 
@@ -60,7 +60,7 @@ namespace Taxi
             }
         }
 
-        private void ChangeLanguageClick(Object sender, EventArgs e)
+        public void ChangeLanguageClick(Object sender, EventArgs e)
         {
             MenuItem mi = sender as MenuItem;
             if (mi != null)
@@ -73,7 +73,7 @@ namespace Taxi
             }
 
         }
-        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        public void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (txtUserName.Text == "" || txtLastName.Text == "" || txtNumber.Text == "" || txtMail.Text=="" || txtPassword.Password == "" || txtPassword1.Password == "")
             {
@@ -171,16 +171,16 @@ namespace Taxi
             symmetricKey.Clear();
             return Convert.ToBase64String(cipherTextBytes);
         }
-        private void Power_Click(object sender, RoutedEventArgs e)
+        public void Power_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-        private void GridBottomBar_MouseDown(object sender, MouseButtonEventArgs e)
+        public void GridBottomBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        public void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();
             loginScreen.Show();
