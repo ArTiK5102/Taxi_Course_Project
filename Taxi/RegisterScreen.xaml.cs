@@ -1,23 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.SqlClient;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Taxi.Models;
+﻿using Taxi.Models;
 
 namespace Taxi
 {
@@ -48,7 +29,7 @@ namespace Taxi
                 menuLanguage.Items.Add(menuLang);
             }
         }
-        public void LanguageChanged(Object sender, EventArgs e)
+        private void LanguageChanged(Object sender, EventArgs e)
         {
             CultureInfo currLang = App.Language;
 
@@ -60,7 +41,7 @@ namespace Taxi
             }
         }
 
-        public void ChangeLanguageClick(Object sender, EventArgs e)
+        private void ChangeLanguageClick(Object sender, EventArgs e)
         {
             MenuItem mi = sender as MenuItem;
             if (mi != null)
@@ -73,7 +54,7 @@ namespace Taxi
             }
 
         }
-        public void btnSubmit_Click(object sender, RoutedEventArgs e)
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             if (txtUserName.Text == "" || txtLastName.Text == "" || txtNumber.Text == "" || txtMail.Text=="" || txtPassword.Password == "" || txtPassword1.Password == "")
             {
@@ -171,16 +152,16 @@ namespace Taxi
             symmetricKey.Clear();
             return Convert.ToBase64String(cipherTextBytes);
         }
-        public void Power_Click(object sender, RoutedEventArgs e)
+        private void Power_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-        public void GridBottomBar_MouseDown(object sender, MouseButtonEventArgs e)
+        private void GridBottomBar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
 
-        public void btnLogin_Click(object sender, RoutedEventArgs e)
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             LoginScreen loginScreen = new LoginScreen();
             loginScreen.Show();
